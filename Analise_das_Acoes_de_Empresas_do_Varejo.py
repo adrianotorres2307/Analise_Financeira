@@ -169,7 +169,6 @@ dataset1['BTOW'][dataset1['Date'] =='2017-01-02'], dataset1['BTOW'][dataset1['Da
 np.log(20.26/ 9.84) * 100 #TAXA DE RETORNO LOGARÍTMICA
 
 # # Cálculo do Retorno Anual - 2018
-
 dataset1['MGLU'][dataset1['Date'] =='2018-01-02'], dataset1['MGLU'][dataset1['Date'] =='2018-12-28']
 np.log(5.65/ 2.47) * 100 #TAXA DE RETORNO LOGARÍTMICA
 
@@ -180,7 +179,6 @@ dataset1['BTOW'][dataset1['Date'] =='2018-01-02'], dataset1['BTOW'][dataset1['Da
 np.log(41.53/ 19.76) * 100 #TAXA DE RETORNO LOGARÍTMICA
 
 # # Cálculo do Retorno Anual - 2019
-
 dataset1['MGLU'][dataset1['Date'] =='2019-01-02'], dataset1['MGLU'][dataset1['Date'] =='2019-12-30']
 np.log(11.92/ 5.81) * 100 #TAXA DE RETORNO LOGARÍTMICA
 
@@ -191,10 +189,8 @@ dataset1['BTOW'][dataset1['Date'] =='2019-01-02'], dataset1['BTOW'][dataset1['Da
 np.log(62.86/ 42.50) * 100 #TAXA DE RETORNO LOGARÍTMICA
 
 # # Cálculo do Retorno Anual - 2020
-
 dataset1['MGLU'][dataset1['Date'] =='2020-01-02'], dataset1['MGLU'][dataset1['Date'] =='2020-12-30']
 np.log(24.95/ 12.33) * 100 #TAXA DE RETORNO LOGARÍTMICA
-
 
 dataset1['VVAR'][dataset1['Date'] =='2020-01-02'], dataset1['VVAR'][dataset1['Date'] =='2020-12-30']
 np.log(16.16/ 11.73) * 100 #TAXA DE RETORNO LOGARÍTMICA
@@ -203,7 +199,6 @@ dataset1['BTOW'][dataset1['Date'] =='2020-01-02'], dataset1['BTOW'][dataset1['Da
 np.log(75.61/ 65.18) * 100 #TAXA DE RETORNO LOGARÍTMICA
 
 # # Cálculo do Retorno Anual - 2021
-
 dataset1['MGLU'][dataset1['Date'] =='2021-01-04'], dataset1['MGLU'][dataset1['Date'] =='2021-05-21']
 np.log(18.53/ 25.20) * 100 #TAXA DE RETORNO LOGARÍTMICA
 
@@ -289,7 +284,6 @@ pesos2 = np.array([0.33,0.33,0.33])
 #VALOR DE COVARIÂNCIA ANUAL
 taxas_retorno.cov() * 246
 
-
 np.dot(taxas_retorno.cov() * 246, pesos2)
 
 variancia_portfolio = np.dot(pesos2, np.dot(taxas_retorno.cov() * 246, pesos2))
@@ -362,7 +356,6 @@ dataset2
 
 figura1 = px.line(x = datas, y = dataset2['taxa retorno'], title = 'Retorno diário do portifólio')
 figura1.show()
-
 
 figura2 = px.line(title = 'Evolução do patrimônio')
 for i in dataset2.drop(columns = ['soma valor', 'taxa retorno']).columns:
@@ -518,7 +511,6 @@ taxa_selic_historico
 dataset_original = pd.read_csv('acoes_varejo.csv')
 dinheiro_total = 5000
 sem_risco = taxa_selic_historico.mean() / 100
-
 
 def fitness_function(solucao):
   dataset3 = dataset_original.copy()
